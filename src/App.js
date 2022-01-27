@@ -8,7 +8,7 @@ import { Layout, Typography, Space } from 'antd';
 import { Exchanges, Homepage, News, Cryptocurrencies, Cryptodetails, Navbar } from './components';
 import './App.css';
 
-console.log(Exchanges, Cryptocurrencies );
+
 
 const App = () => {
   return (
