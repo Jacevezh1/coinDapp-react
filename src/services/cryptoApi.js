@@ -19,7 +19,7 @@ export const cryptoApi = createApi({
     
     endpoints: (builder) => ({ /* builder como parametro, y regresa un objeto, el nombre de los enpoints */
         getCryptos: builder.query({
-            query: () => createRequest('')/* Apunta a un request especifico, la informcion de los exchanges */
+            query: (count) => createRequest('')/* Apunta a un request especifico, la informcion de los exchanges */
         })
     })
 })
