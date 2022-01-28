@@ -3,10 +3,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createSearchParams } from "react-router-dom";
 import { cryptoApi } from "../services/cryptoApi"; /* Se importa para que el store pueda tener acceso a la Api */
+import { cryptoNewsApi } from "../services/cryptoNewsApi";
 
 export default configureStore({
     reducer:{ 
-        [cryptoApi.reducerPath]: cryptoApi.reducer /* Especificar esto para cada reducer que creas, ya aplicacion conectada */
+        [cryptoApi.reducerPath]: cryptoApi.reducer, /* Especificar esto para cada reducer que creas, ya aplicacion conectada */
+        [cryptoNewsApi.reducerPath]: cryptoNewsApi.reducer
     },
 })
 
