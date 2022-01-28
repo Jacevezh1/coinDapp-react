@@ -18,17 +18,22 @@ export const cryptoApi = createApi({
     endpoints: (builder) => ({ /* builder como parametro, y regresa un objeto, el nombre de los enpoints */
         getCryptos: builder.query({
             query: (count) => createRequest(`/coins?limit=${count}`),
-          }),
-          getCryptoDetails: builder.query({
+        }),
+        getCryptoDetails: builder.query({
             query: (coinId) => createRequest(`/coin/${coinId}`),
-          })
+        }),
+        getCryptoHistory: builder.query({
+            query: ({ coinId, timeperiod }) =>
+              createRequest(`coin/${coinId}/history?timePeriod=${timeperiod}`),
+          }),
     })
 })
 
 
 export const {
     useGetCryptosQuery, /* Redux crea un hook instantamentemnte que obtiene toda la data para tus querys */
-    useGetCryptoDetailsQuery  
+    useGetCryptoDetailsQuery,
+    useGetCryptoHistoryQuery  
 } = cryptoApi;
 
 
